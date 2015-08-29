@@ -1,2 +1,2 @@
 # ZCore
-A mod core to my future mods. Adds easier creation of minecraft mods.
+A core mod for my future mods. Adds easier creation of minecraft items, entities (living and otherwise), blocks, etc. This is currently a work in progress mod. You can use/modify this mod for personal use and not commercial gain. All modifications cannot be published in any form except with the consent of me or otherwise by pull request. Use at your own risk as this is very incomplete and I (and any collaborators) have no liablity for any damage substained indirect or otherwise, real or imagined.
