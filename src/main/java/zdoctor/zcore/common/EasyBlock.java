@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.event.FMLStateEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -13,11 +14,14 @@ import zdoctor.zcore.proxy.CommonProxy;
 
 public class EasyBlock extends Block implements ISubEvent {
 	
-	private int blockMeta;
-	private String blockModel;
-	private String modID;
+	protected int blockMeta;
+	protected String blockModel;
+	protected String modID;
 	
-	private Block block;
+	protected Block block;
+	
+	protected Object[] recipe;
+	protected boolean isShapeless;
 	
 	public EasyBlock(String model, String mod) {
 		this(model, 0, mod, CreativeTabs.tabDecorations);
@@ -37,16 +41,37 @@ public class EasyBlock extends Block implements ISubEvent {
 		setUnlocalizedName(this.blockModel);
 		setCreativeTab(tab);
 		
-		CommonProxy.subEvent(this, 0);	
+		CommonProxy.subEvent(this, 0);
 	}
-
+	
+	public void setRecipe(Object[] recipe) {
+		this.setRecipe(recipe, false);
+	}
+	/**
+	 * 
+	 * @param recipe - The item's recipe
+	 * @param isShapeless - if shapeless, defaults false
+	 */
+	public void setRecipe(Object[] recipe, boolean isShapeless) {
+		if(this.recipe == null) {
+			this.recipe = recipe;
+			this.isShapeless = isShapeless;
+		}
+	}
+	
 	@Override
 	public void fire(FMLStateEvent e) {
+		System.out.println(this.modID + ":" + this.blockModel);
+		GameRegistry.registerBlock(this, this.blockModel);
 		if(e.getSide() == Side.CLIENT)
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(this), this.blockMeta, 
 						new ModelResourceLocation(this.modID + ":" + this.blockModel, "inventory"));
-		System.out.println(this.modID + ":" + this.blockModel);
-		GameRegistry.registerBlock(this, this.blockModel);
+		if(this.recipe != null) {
+			if(this.isShapeless)
+				GameRegistry.addShapelessRecipe(new ItemStack(this), this.recipe);
+			else
+				GameRegistry.addRecipe(new ItemStack(this), this.recipe);
+		}
 	}
 	
 

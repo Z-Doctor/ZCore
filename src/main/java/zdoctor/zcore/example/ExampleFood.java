@@ -1,5 +1,6 @@
 package zdoctor.zcore.example;
 
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import zdoctor.zcore.ZCore;
 import zdoctor.zcore.common.EasyFood;
