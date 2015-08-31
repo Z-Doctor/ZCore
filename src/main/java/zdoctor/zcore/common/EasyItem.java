@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.event.FMLStateEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -16,6 +17,8 @@ public class EasyItem extends Item implements ISubEvent {
 	protected String modID;
 		
 	protected Object[] recipe;
+	
+	protected boolean isShapeless;
 	
 	public EasyItem(String model, String mod) {
 		this(model, 0, mod, CreativeTabs.tabMisc);
@@ -38,17 +41,33 @@ public class EasyItem extends Item implements ISubEvent {
 	}
 	
 	public void setRecipe(Object[] recipe) {
-		
+		this.setRecipe(recipe, false);
+	}
+	/**
+	 * 
+	 * @param recipe - The item's recipe
+	 * @param isShapeless - if shapeless, defaults false
+	 */
+	public void setRecipe(Object[] recipe, boolean isShapeless) {
+		if(this.recipe == null) {
+			this.recipe = recipe;
+			this.isShapeless = isShapeless;
+		}
 	}
 	
 	@Override
 	public void fire(FMLStateEvent e) {
-		if(e.getSide() == Side.CLIENT)
-			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, 
-					this.itemMeta, new ModelResourceLocation(this.modID + ":" +
-						this.itemModel, "inventory"));
-		System.out.println(this.modID + ":" + this.itemModel);
 		GameRegistry.registerItem(this, this.itemModel, this.modID);
+		System.out.println(this.modID + ":" + this.itemModel);
+		if(e.getSide() == Side.CLIENT)
+			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this,  this.itemMeta, 
+				new ModelResourceLocation(this.modID + ":" + this.itemModel, "inventory"));
+		if(this.recipe != null) {
+			if(this.isShapeless)
+				GameRegistry.addShapelessRecipe(new ItemStack(this), this.recipe);
+			else
+				GameRegistry.addRecipe(new ItemStack(this), this.recipe);
+		}
 	}
 	
 

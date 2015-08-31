@@ -19,6 +19,7 @@ public class EasyFood extends ItemFood implements ISubEvent {
 	protected String modID;
 	
 	protected Object[] recipe;
+	protected boolean isShapeless;
 	
 	/** Number of ticks to run while 'EnumAction'ing until result. 20 ticks is 1 second */
 	protected int itemUseDuration;
@@ -71,14 +72,34 @@ public class EasyFood extends ItemFood implements ISubEvent {
 		this.isWolfsFavoriteMeat = isWolfFood;
 	}
 	
+	public void setRecipe(Object[] recipe) {
+		this.setRecipe(recipe, false);
+	}
+	/**
+	 * 
+	 * @param recipe - The item's recipe
+	 * @param isShapeless - if shapeless, defaults false
+	 */
+	public void setRecipe(Object[] recipe, boolean isShapeless) {
+		if(this.recipe == null) {
+			this.recipe = recipe;
+			this.isShapeless = isShapeless;
+		}
+	}
+	
 	@Override
 	public void fire(FMLStateEvent e) {
-		if(e.getSide() == Side.CLIENT)
-			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, 
-					this.itemMeta, new ModelResourceLocation(this.modID + ":" +
-						this.itemModel, "inventory"));
 		System.out.println(this.modID + ":" + this.itemModel);
 		GameRegistry.registerItem(this, this.itemModel, this.modID);
+		if(e.getSide() == Side.CLIENT)
+			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, this.itemMeta, 
+				new ModelResourceLocation(this.modID + ":" + this.itemModel, "inventory"));
+		if(this.recipe != null) {
+			if(this.isShapeless)
+				GameRegistry.addShapelessRecipe(new ItemStack(this), this.recipe);
+			else
+				GameRegistry.addRecipe(new ItemStack(this), this.recipe);
+		}
 	}
 	
 	@Override

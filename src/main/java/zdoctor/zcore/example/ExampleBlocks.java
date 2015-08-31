@@ -2,6 +2,7 @@ package zdoctor.zcore.example;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.Item;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import zdoctor.zcore.ZCore;
