@@ -13,9 +13,11 @@ import zdoctor.zcore.proxy.CommonProxy;
 
 public class EasyBlock extends Block implements ISubEvent {
 	
-	private int itemMeta;
-	private String itemModel;
+	private int blockMeta;
+	private String blockModel;
 	private String modID;
+	
+	private Block block;
 	
 	public EasyBlock(String model, String mod) {
 		this(model, 0, mod, CreativeTabs.tabDecorations);
@@ -28,11 +30,11 @@ public class EasyBlock extends Block implements ISubEvent {
 	}
 	public EasyBlock(String model, int meta, String mod, CreativeTabs tab) {
 		super(Material.rock);
-		this.itemModel = model;
-		this.itemMeta = meta;
+		this.blockModel = model;
+		this.blockMeta = meta;
 		this.modID = mod;
 		
-		setUnlocalizedName(this.itemModel);
+		setUnlocalizedName(this.blockModel);
 		setCreativeTab(tab);
 		
 		CommonProxy.subEvent(this, 0);	
@@ -41,10 +43,10 @@ public class EasyBlock extends Block implements ISubEvent {
 	@Override
 	public void fire(FMLStateEvent e) {
 		if(e.getSide() == Side.CLIENT)
-			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(this), this.itemMeta, 
-						new ModelResourceLocation(this.modID + ":" + this.itemModel, "inventory"));
-		System.out.println(this.modID + ":" + this.itemModel);
-		GameRegistry.registerBlock(this, this.itemModel);
+			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(this), this.blockMeta, 
+						new ModelResourceLocation(this.modID + ":" + this.blockModel, "inventory"));
+		System.out.println(this.modID + ":" + this.blockModel);
+		GameRegistry.registerBlock(this, this.blockModel);
 	}
 	
 

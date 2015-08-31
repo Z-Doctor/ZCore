@@ -11,9 +11,11 @@ import zdoctor.zcore.proxy.CommonProxy;
 
 public class EasyItem extends Item implements ISubEvent {
 	
-	private int itemMeta;
-	private String itemModel;
-	private String modID;
+	protected int itemMeta;
+	protected String itemModel;
+	protected String modID;
+		
+	protected Object[] recipe;
 	
 	public EasyItem(String model, String mod) {
 		this(model, 0, mod, CreativeTabs.tabMisc);
@@ -28,19 +30,23 @@ public class EasyItem extends Item implements ISubEvent {
 		this.itemModel = model;
 		this.itemMeta = meta;
 		this.modID = mod;
-		
+
 		setUnlocalizedName(this.itemModel);
 		setCreativeTab(tab);
 		
 		CommonProxy.subEvent(this, 0);	
 	}
-
+	
+	public void setRecipe(Object[] recipe) {
+		
+	}
+	
 	@Override
 	public void fire(FMLStateEvent e) {
 		if(e.getSide() == Side.CLIENT)
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, 
-					this.itemMeta, new ModelResourceLocation(this.modID + ":" + this.itemModel, 
-							"inventory"));
+					this.itemMeta, new ModelResourceLocation(this.modID + ":" +
+						this.itemModel, "inventory"));
 		System.out.println(this.modID + ":" + this.itemModel);
 		GameRegistry.registerItem(this, this.itemModel, this.modID);
 	}

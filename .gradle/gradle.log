@@ -1,37 +1,25 @@
 ****************************
  Powered By MCP:             
- http://mcp.ocean-labs.de/   
+ http://modcoderpack.com/    
  Searge, ProfMobius, Fesh0r, 
  R4wk, ZeuX, IngisKahn, bspkrs
  MCP Data version : snapshot_20150804
 ****************************
-:downloadClient SKIPPED
-:downloadServer SKIPPED
-:getVersionJson
-:extractUserDev UP-TO-DATE
-:mergeJars SKIPPED
-:applyBinPatches SKIPPED
-:downloadMcpTools SKIPPED
 :extractMcpData UP-TO-DATE
-:genSrgs SKIPPED
-:deobfBinJar SKIPPED
-:compileApiJava UP-TO-DATE
-:processApiResources UP-TO-DATE
-:apiClasses UP-TO-DATE
-:sourceMainJava UP-TO-DATE
-:compileJava UP-TO-DATE
-:processResources
-:classes
-:jar
-:compileTestJava UP-TO-DATE
-:processTestResources UP-TO-DATE
-:testClasses UP-TO-DATE
-:test UP-TO-DATE
-:reobf
-:assemble
-:check UP-TO-DATE
-:build
+:getVersionJson
+:extractUserDev
+:genSrgs FAILED
 
-BUILD SUCCESSFUL
+FAILURE: Build failed with an exception.
 
-Total time: 49.08 secs
+* What went wrong:
+Some problems were found with the configuration of task ':genSrgs'.
+> File 'C:\Users\Reuben\.gradle\caches\minecraft\net\minecraftforge\forge\1.8-11.14.3.1506\unpacked\conf\packaged.exc' specified for property 'inExc' does not exist.
+> File 'C:\Users\Reuben\.gradle\caches\minecraft\net\minecraftforge\forge\1.8-11.14.3.1506\unpacked\conf\packaged.srg' specified for property 'inSrg' does not exist.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 40.049 secs
