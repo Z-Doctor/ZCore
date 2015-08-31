@@ -1,12 +1,8 @@
 package zdoctor.zcore.example;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.properties.PropertyBool;
-import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import zdoctor.zcore.ZCore;
 import zdoctor.zcore.common.EasyBlock;

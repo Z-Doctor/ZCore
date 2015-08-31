@@ -5,21 +5,9 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.stats.StatList;
 import net.minecraft.world.World;
-
-/* Quick Reference
- * Food	HealAmount Saturation
- ***Apple***4***0.3F
- ***Bread***5***0.6F
- ***Porkchop/Beef(Raw)***3***0.3F
- ***Porkchop/Beef(Cooked)***8***0.8F
- ***Golden Apple***4***1.2F
- */
 import net.minecraftforge.fml.common.event.FMLStateEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
