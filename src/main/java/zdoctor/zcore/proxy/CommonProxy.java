@@ -10,8 +10,10 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import zdoctor.zcore.common.ISubEvent;
 import zdoctor.zcore.example.ExampleBlocks;
+import zdoctor.zcore.example.ExampleCrop;
 import zdoctor.zcore.example.ExampleFood;
 import zdoctor.zcore.example.ExampleItems;
+import zdoctor.zcore.example.ExampleSeed;
 
 public class CommonProxy {
 	private static List<ISubEvent> subPre = new ArrayList<ISubEvent>();
@@ -20,12 +22,14 @@ public class CommonProxy {
 	
 	public void preForge() {
 		ExampleItems.load();
-    	ExampleBlocks.load();
+		ExampleBlocks.load();
     	ExampleFood.load();
+    	ExampleSeed.load();
 	}
 	
 	public void preInit(FMLPreInitializationEvent e) {
 		alert(e);
+		//ExampleCrop.load();
 	}
 	
 	public void init(FMLInitializationEvent e) {

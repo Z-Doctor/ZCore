@@ -1,3 +1,26 @@
+0.0.6-DEV
+    - Created EasySeed
+    - Created EasySeed Example, diamondseed
+        - diamondseed currently plants as wheat seed
+        - diamondseed texture added
+        - created a seed folder in models and textures
+    - Removed some unused code in Easy block, item, and food
+    - Added default hardness, set sound, and blast resistance to easy block (same as stone) 
+
+0.0.5-DEV
+    - Specified MOD as in development
+    - Removed fields from easy block, item and food
+        - Changed code and structure
+    - Added easy plants and crop classes (in development)
+
+0.0.4
+    - Added set recipes to easy block, food, and item
+    - Fixed small bugs in registration
+    - Added recipes for debugtool, hamburger, and dawnstone
+    - Added language file
+    - Added planned features file
+    - Updated to latest forge - 1506 (for now anyway)
+
 0.0.3
     - Added hamburger texture and model
     - Fixed easy food

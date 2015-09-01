@@ -13,59 +13,79 @@ import net.minecraftforge.fml.relauncher.Side;
 import zdoctor.zcore.proxy.CommonProxy;
 
 public class EasyBlock extends Block implements ISubEvent {
-	
-	protected int blockMeta;
-	protected String blockModel;
-	protected String modID;
-	
-	protected Block block;
-	
+	// Basic info
+	protected final String itemModel;
+	protected final String modID;
+	// Advance
 	protected Object[] recipe;
 	protected boolean isShapeless;
 	
+    /** The amount this food item heals the player. */
+	protected int healAmount;
+	protected float saturationModifier;
+    /** Whether wolves like this food (true for raw and cooked pork chop). */
+	protected boolean isWolfsFavoriteMeat;
+	
+	// Constructors
 	public EasyBlock(String model, String mod) {
-		this(model, 0, mod, CreativeTabs.tabDecorations);
-	}
-	public EasyBlock(String model, int meta, String mod) {
-		this(model, meta, mod, CreativeTabs.tabDecorations);
+		this(model, mod, CreativeTabs.tabDecorations);
 	}
 	public EasyBlock(String model, String mod, CreativeTabs tab) {
-		this(model, 0, mod, tab);
-	}
-	public EasyBlock(String model, int meta, String mod, CreativeTabs tab) {
 		super(Material.rock);
-		this.blockModel = model;
-		this.blockMeta = meta;
+		this.itemModel = model;
 		this.modID = mod;
 		
-		setUnlocalizedName(this.blockModel);
-		setCreativeTab(tab);
+		this.setCreativeTab(tab);
+		this.setUnlocalizedName(this.getModelPath());
+		this.setHardness(1.5F);
+		this.setResistance(10.0F);
+		this.setStepSound(soundTypePiston);
 		
-		CommonProxy.subEvent(this, 0);
+		CommonProxy.subEvent(this, 0);	
 	}
 	
-	public void setRecipe(Object[] recipe) {
-		this.setRecipe(recipe, false);
+	/** Override to set a different path */
+	public String getModelPath() {
+		return this.itemModel;
+	}
+	/** Override to change meta */
+	public int getBlockMeta() {
+		return 0;
+	}
+	
+	/** Shaped by default 
+	 * @param recipe - The food's recipe object */
+	public EasyBlock setRecipe(Object[] recipe) {
+		return this.setRecipe(recipe, false);
 	}
 	/**
-	 * 
 	 * @param recipe - The item's recipe
-	 * @param isShapeless - if shapeless, defaults false
+	 * @param isShapeless - Whether or not the food's recipe is shapeless
 	 */
-	public void setRecipe(Object[] recipe, boolean isShapeless) {
+	public EasyBlock setRecipe(Object[] recipe, boolean isShapeless) {
 		if(this.recipe == null) {
 			this.recipe = recipe;
 			this.isShapeless = isShapeless;
 		}
+		return this;
 	}
 	
+	public Item asItem() {
+		return Item.getItemFromBlock(this);
+	}
+	public EasyBlock setNoTab() {
+		this.setCreativeTab((CreativeTabs)null);
+		return this;
+	}
+	
+	// Overrides
 	@Override
 	public void fire(FMLStateEvent e) {
-		System.out.println(this.modID + ":" + this.blockModel);
-		GameRegistry.registerBlock(this, this.blockModel);
+		System.out.println(this.modID + ":" + this.getModelPath());
+		GameRegistry.registerBlock(this, this.getModelPath());
 		if(e.getSide() == Side.CLIENT)
-			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(this), this.blockMeta, 
-						new ModelResourceLocation(this.modID + ":" + this.blockModel, "inventory"));
+			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this.asItem(), this.getBlockMeta(), 
+				new ModelResourceLocation(this.modID + ":" + this.getModelPath(), "inventory"));
 		if(this.recipe != null) {
 			if(this.isShapeless)
 				GameRegistry.addShapelessRecipe(new ItemStack(this), this.recipe);
@@ -73,6 +93,9 @@ public class EasyBlock extends Block implements ISubEvent {
 				GameRegistry.addRecipe(new ItemStack(this), this.recipe);
 		}
 	}
-	
-
+	/** Override to change material */
+	@Override
+	public Material getMaterial() {
+		return super.getMaterial();
+	}
 }

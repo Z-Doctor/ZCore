@@ -14,40 +14,31 @@ import net.minecraftforge.fml.relauncher.Side;
 import zdoctor.zcore.proxy.CommonProxy;
 
 public class EasyFood extends ItemFood implements ISubEvent {
-	protected int itemMeta;
-	protected String itemModel;
-	protected String modID;
-	
+	// Basic info
+	protected final String foodModel;
+	protected final String modID;
+	// Advance
 	protected Object[] recipe;
 	protected boolean isShapeless;
 	
-	/** Number of ticks to run while 'EnumAction'ing until result. 20 ticks is 1 second */
-	protected int itemUseDuration;
     /** The amount this food item heals the player. */
 	protected int healAmount;
 	protected float saturationModifier;
-    /** Whether wolves like this food (true for raw and cooked porkchop). */
+    /** Whether wolves like this food (true for raw and cooked pork chop). */
 	protected boolean isWolfsFavoriteMeat;
 	
+	// Constructors
 	public EasyFood(String model, String mod) {
-		this(model, 0, mod, CreativeTabs.tabFood);
-	}
-	public EasyFood(String model, int meta, String mod) {
-		this(model, meta, mod, CreativeTabs.tabFood);
+		this(model, mod, CreativeTabs.tabFood);
 	}
 	public EasyFood(String model, String mod, CreativeTabs tab) {
-		this(model, 0, mod, tab);
-	}
-	public EasyFood(String model, int meta, String mod, CreativeTabs tab) {
 		super(4, 0.3F, false);
-		this.itemModel = "food/" + model;
-		this.itemMeta = meta;
+		this.foodModel = "food/" + model;
 		this.modID = mod;
 		
-		setCreativeTab(tab);
-		setUnlocalizedName(this.itemModel);
+		this.setCreativeTab(tab);
+		this.setUnlocalizedName(this.getModelPath());
 		
-		this.itemUseDuration = 32;
 		this.healAmount = 4;
 		this.saturationModifier = 0.3F;
 		this.isWolfsFavoriteMeat = false;
@@ -55,45 +46,56 @@ public class EasyFood extends ItemFood implements ISubEvent {
 		CommonProxy.subEvent(this, 0);	
 	}
 	
-	
-	public void setStats(int amount, float saturation){
-		this.setStats(32, amount, saturation, false);
+	// Food Stats
+	public EasyFood setStats(int amount, float saturation){
+		return this.setStats(amount, saturation, false);
 	}
-	public void setStats(int amount, float saturation, boolean isWolfFood){
-		this.setStats(32, amount, saturation, isWolfFood);
-	}
-	public void setStats(int eatTime, int amount, float saturation){
-		this.setStats(eatTime, amount, saturation, false);
-	}
-	public void setStats(int eatTime, int amount, float saturation, boolean isWolfFood){
-		this.itemUseDuration = eatTime;
+	public EasyFood setStats(int amount, float saturation, boolean isWolfFood){
 		this.healAmount = amount;
 		this.saturationModifier = saturation;
 		this.isWolfsFavoriteMeat = isWolfFood;
+		return this;
 	}
 	
-	public void setRecipe(Object[] recipe) {
-		this.setRecipe(recipe, false);
+	/** Override to set a different path */
+	public String getModelPath() {
+		return this.foodModel;
+	}
+	/** Override to change meta */
+	public int getFoodMeta() {
+		return 0;
+	}
+	
+	/** Shaped by default 
+	 * @param recipe - The food's recipe object */
+	public EasyFood setRecipe(Object[] recipe) {
+		return this.setRecipe(recipe, false);
 	}
 	/**
-	 * 
 	 * @param recipe - The item's recipe
-	 * @param isShapeless - if shapeless, defaults false
+	 * @param isShapeless - Whether or not the food's recipe is shapeless
 	 */
-	public void setRecipe(Object[] recipe, boolean isShapeless) {
+	public EasyFood setRecipe(Object[] recipe, boolean isShapeless) {
 		if(this.recipe == null) {
 			this.recipe = recipe;
 			this.isShapeless = isShapeless;
 		}
+		return this;
 	}
 	
+	public EasyFood setNoTab() {
+		this.setCreativeTab((CreativeTabs)null);
+		return this;
+	}
+	
+	// Overrides
 	@Override
 	public void fire(FMLStateEvent e) {
-		System.out.println(this.modID + ":" + this.itemModel);
-		GameRegistry.registerItem(this, this.itemModel, this.modID);
+		System.out.println(this.modID + ":" + this.getModelPath());
+		GameRegistry.registerItem(this, this.getModelPath(), this.modID);
 		if(e.getSide() == Side.CLIENT)
-			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, this.itemMeta, 
-				new ModelResourceLocation(this.modID + ":" + this.itemModel, "inventory"));
+			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, this.getFoodMeta(), 
+				new ModelResourceLocation(this.modID + ":" + this.getModelPath(), "inventory"));
 		if(this.recipe != null) {
 			if(this.isShapeless)
 				GameRegistry.addShapelessRecipe(new ItemStack(this), this.recipe);
@@ -104,12 +106,10 @@ public class EasyFood extends ItemFood implements ISubEvent {
 	
 	@Override
 	public boolean isWolfsFavoriteMeat() {
-		// TODO Auto-generated method stub
 		return this.isWolfsFavoriteMeat;
 	}
 	@Override
 	public int getHealAmount(ItemStack stack) {
-		// TODO Auto-generated method stub
 		return this.healAmount;
 	}
 	@Override
@@ -120,9 +120,10 @@ public class EasyFood extends ItemFood implements ISubEvent {
 	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
 		super.onFoodEaten(stack, worldIn, player);
 	}
+	/** Override to make it take longer */
 	@Override
 	public int getMaxItemUseDuration(ItemStack stack) {
-		return this.itemUseDuration;
+		return super.getMaxItemUseDuration(stack);
 	}
 	@Override
 	public EnumAction getItemUseAction(ItemStack stack) {
