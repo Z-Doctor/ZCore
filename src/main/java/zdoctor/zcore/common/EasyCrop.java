@@ -9,35 +9,122 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelBakery;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zdoctor.zcore.proxy.CommonProxy;
 
-public class EasyCrop extends BlockBush implements IGrowable
-{
+public class EasyCrop extends BlockBush implements IGrowable, ISubEvent {
     public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 7);
-
-    public EasyCrop()
-    {
-        this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)));
-        this.setTickRandomly(true);
-        float f = 0.5F;
-        this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.25F, 0.5F + f);
-        this.setCreativeTab((CreativeTabs)null);
-        this.setHardness(0.0F);
-        this.setStepSound(soundTypeGrass);
-        this.disableStats();
-    }
-
+    
+    protected Item cropSeed;
+    protected Item crop;
+    
+    // Basic info
+ 	protected final String blockModel;
+ 	protected final String modID;
+ 	// Constructors
+ 	public EasyCrop(String model, String mod) {
+ 		this(model, mod, (CreativeTabs)null);
+ 	}
+ 	public EasyCrop(String model, String mod, CreativeTabs tab) {
+ 		this.blockModel = model;
+ 		this.modID = mod;
+ 		
+ 		this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)));
+		this.setTickRandomly(true);
+		float f = 0.5F;
+		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.25F, 0.5F + f);
+		this.setHardness(0.0F);
+		this.setStepSound(soundTypeGrass);
+		this.disableStats();
+ 		this.setCreativeTab(tab);
+ 		this.setUnlocalizedName(this.getModelPath());
+ 		
+ 		CommonProxy.subEvent(this);
+ 	}
+ 	
+ 	public EasyCrop setCrop(Item crop) {
+ 		return this.setCrop(crop, null);
+ 	}
+ 	public EasyCrop setCrop(Item crop, Item seed) {
+ 		this.crop = crop;
+ 		this.cropSeed = seed;
+ 		return this;
+ 	}
+ 	
+ 	/** Override to set a different path */
+ 	public String getModelPath() {
+ 		return "crop/" + this.blockModel;
+ 	}
+ 	/** Override to change meta */
+ 	public int getBlockMeta() {
+ 		return 0;
+ 	}
+ 	
+ 	public Item asItem() {
+ 		return Item.getItemFromBlock(this);
+ 	}
+ 	/** Override this and register you crops model files to change */
+ 	protected void registerRender() {
+ 		for(int i=0;i<=7;i++){
+ 			System.out.println(this.getModelPath() + "_stage" + i);
+ 			this.registerRender(this.getModelPath() + "_stage" + i);
+ 			registerVariants(this.getModelPath() + "_stage" + i);
+ 		}
+ 	}
+ 	
+ 	protected void registerVariants(String variant) {
+ 		ModelBakery.addVariantName(Item.getItemFromBlock(this), variant);
+ 	}
+ 	
+ 	protected void registerRender(String crop) {
+ 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this.asItem(), this.getBlockMeta(), 
+ 			new ModelResourceLocation(this.modID + ":" + crop));
+ 	}
+ 	
+ 	// Overrides
+ 	@Override
+	public void fire(FMLPreInitializationEvent e) {
+		System.out.println(this.modID + ":" + this.getModelPath());
+ 		GameRegistry.registerBlock(this, this.getModelPath());
+		
+	}
+	@Override
+	public void fire(FMLInitializationEvent e) {
+		if(e.getSide() == Side.CLIENT)
+ 			this.registerRender();
+	}
+	@Override
+	public void fire(FMLPostInitializationEvent e) {
+		((EasySeed) this.cropSeed).setCrop(this);
+	}
+	
+	@Override
+	public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
+		// TODO Auto-generated method stub
+		return super.canPlaceBlockAt(worldIn, pos) && worldIn.getBlockState(pos.down()).getBlock().canSustainPlant(worldIn, pos.down(), net.minecraft.util.EnumFacing.UP, this)
+			&& canPlaceBlockOn(worldIn.getBlockState(pos.down()).getBlock());
+	}
+	
     /**
      * is the block grass, dirt or farmland
+     * override to change
      */
     protected boolean canPlaceBlockOn(Block ground)
     {
@@ -133,17 +220,18 @@ public class EasyCrop extends BlockBush implements IGrowable
 
     public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
     {
-        return (worldIn.getLight(pos) >= 8 || worldIn.canSeeSky(pos)) && worldIn.getBlockState(pos.down()).getBlock().canSustainPlant(worldIn, pos.down(), net.minecraft.util.EnumFacing.UP, this);
+        return (worldIn.getLight(pos) >= 8 || worldIn.canSeeSky(pos)) && worldIn.getBlockState(pos.down()).getBlock().canSustainPlant(worldIn, pos.down(), net.minecraft.util.EnumFacing.UP, this)
+			&& canPlaceBlockOn(worldIn.getBlockState(pos.down()).getBlock());
     }
 
     protected Item getSeed()
     {
-        return Items.wheat_seeds;
+        return this.cropSeed;
     }
 
     protected Item getCrop()
     {
-        return Items.wheat;
+        return this.crop;
     }
 
     /**

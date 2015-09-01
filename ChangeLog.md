@@ -1,3 +1,20 @@
+0.0.7-DEV
+    - Updated Common proxy (each class now handles each event on its own)
+    - Cleaned up/updated all class code
+    - Created Easy Crop
+    - Created Example Crop
+        - diamondcrop (drops diamond, planted with diamond seed)
+        - Grows like wheat and drops diamond seed
+    - Created Texture for diamondcrop
+    - Cleared some unused/unimplemented code
+    - Updated build.gradle
+    - Updated en_US.lang
+    - Updated plannedfeatures, renamed to PlannedFeatures
+    - Easy Seed now drops seed when farmland is destroyed
+    - EasySeed example moved to EasyCropExample. In favor of creating both at the same time.
+    - Add language support for Pirate Speak, because I couldn't resist when I found it.
+    - Added Update Notes
+
 0.0.6-DEV
     - Created EasySeed
     - Created EasySeed Example, diamondseed
