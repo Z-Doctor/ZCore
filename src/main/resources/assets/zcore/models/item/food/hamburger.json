@@ -1,6 +1,6 @@
 {
 "textures": {
-    "texture": "zcore:food/hamburger"
+    "texture": "zcore:foods/hamburger"
 },
 "elements": [ 
 {

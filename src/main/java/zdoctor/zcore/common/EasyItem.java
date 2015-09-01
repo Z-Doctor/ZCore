@@ -3,13 +3,11 @@ package zdoctor.zcore.common;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.common.event.FMLStateEvent;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import zdoctor.zcore.proxy.CommonProxy;
@@ -21,13 +19,6 @@ public class EasyItem extends Item implements ISubEvent {
 	// Advance
 	protected Object[] recipe;
 	protected boolean isShapeless;
-	
-    /** The amount this food item heals the player. */
-	protected int healAmount;
-	protected float saturationModifier;
-    /** Whether wolves like this food (true for raw and cooked pork chop). */
-	protected boolean isWolfsFavoriteMeat;
-	
 	// Constructors
 	public EasyItem(String model, String mod) {
 		this(model, mod, CreativeTabs.tabMisc);
@@ -39,7 +30,7 @@ public class EasyItem extends Item implements ISubEvent {
 		this.setCreativeTab(tab);
 		this.setUnlocalizedName(this.getModelPath());
 		
-		CommonProxy.subEvent(this, 0);	
+		CommonProxy.subEvent(this);	
 	}
 	
 	/** Override to set a different path */
@@ -73,11 +64,19 @@ public class EasyItem extends Item implements ISubEvent {
 		return this;
 	}
 	
+	public void registerItem() {
+		GameRegistry.registerItem(this, this.getModelPath(), this.modID);
+	}
+	
 	// Overrides
 	@Override
-	public void fire(FMLStateEvent e) {
+	public void fire(FMLPreInitializationEvent e) {
 		System.out.println(this.modID + ":" + this.getModelPath());
 		GameRegistry.registerItem(this, this.getModelPath(), this.modID);
+		
+	}
+	@Override
+	public void fire(FMLInitializationEvent e) {
 		if(e.getSide() == Side.CLIENT)
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, this.getItemMeta(), 
 				new ModelResourceLocation(this.modID + ":" + this.getModelPath(), "inventory"));
@@ -88,4 +87,6 @@ public class EasyItem extends Item implements ISubEvent {
 				GameRegistry.addRecipe(new ItemStack(this), this.recipe);
 		}
 	}
+	@Override
+	public void fire(FMLPostInitializationEvent e) {}
 }

@@ -8,7 +8,9 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.event.FMLStateEvent;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import zdoctor.zcore.proxy.CommonProxy;
@@ -43,7 +45,7 @@ public class EasyFood extends ItemFood implements ISubEvent {
 		this.saturationModifier = 0.3F;
 		this.isWolfsFavoriteMeat = false;
 		
-		CommonProxy.subEvent(this, 0);	
+		CommonProxy.subEvent(this);	
 	}
 	
 	// Food Stats
@@ -90,9 +92,12 @@ public class EasyFood extends ItemFood implements ISubEvent {
 	
 	// Overrides
 	@Override
-	public void fire(FMLStateEvent e) {
+	public void fire(FMLPreInitializationEvent e) {
 		System.out.println(this.modID + ":" + this.getModelPath());
 		GameRegistry.registerItem(this, this.getModelPath(), this.modID);
+	}
+	@Override
+	public void fire(FMLInitializationEvent e) {
 		if(e.getSide() == Side.CLIENT)
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, this.getFoodMeta(), 
 				new ModelResourceLocation(this.modID + ":" + this.getModelPath(), "inventory"));
@@ -103,6 +108,8 @@ public class EasyFood extends ItemFood implements ISubEvent {
 				GameRegistry.addRecipe(new ItemStack(this), this.recipe);
 		}
 	}
+	@Override
+	public void fire(FMLPostInitializationEvent e) {}
 	
 	@Override
 	public boolean isWolfsFavoriteMeat() {

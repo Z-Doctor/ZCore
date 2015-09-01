@@ -5,8 +5,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
@@ -34,6 +32,19 @@ public class EasySeed extends EasyItem implements IPlantable {
 	public EasySeed setPlantSpec(Block crop, Block soil) {
 		this.crops = crop;
 		this.soilBlockID = soil;
+		return this;
+	}
+	
+	public EasySeed setCrop(Block crop){
+		return this.setCrop(crop, null);
+	}
+	public EasySeed setCrop(Block crop, Block soil){
+		this.crops = crop;
+		this.soilBlockID = soil == null ? Blocks.farmland : soil;
+		return this;
+	}
+	
+	public EasySeed getSeed() {
 		return this;
 	}
 	
