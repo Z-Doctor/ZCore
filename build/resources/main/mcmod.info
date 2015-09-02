@@ -1,0 +1,16 @@
+[
+{
+  "modid": "zcore",
+  "name": "ZCore",
+  "description": "Core Mod of all my works.",
+  "version": "1.0.0.1",
+  "mcversion": "1.8",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["ZDoctor"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
