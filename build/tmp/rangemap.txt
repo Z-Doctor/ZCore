@@ -15,32 +15,30 @@ Class Start: zdoctor.zcore.ZCore
       @|zdoctor\zcore\ZCore.java|879|886|preFore|method|zdoctor.zcore.ZCore|preFore|(Lnet/minecraftforge/fml/common/event/FMLConstructionEvent;)V
       @|zdoctor\zcore\ZCore.java|887|907|FMLConstructionEvent|class|net.minecraftforge.fml.common.event.FMLConstructionEvent
       @|zdoctor\zcore\ZCore.java|908|909|e|param|zdoctor.zcore.ZCore|preFore|(Lnet/minecraftforge/fml/common/event/FMLConstructionEvent;)V|e|0
-      @|zdoctor\zcore\ZCore.java|919|924|proxy|field|zdoctor.zcore.ZCore|proxy
-      @|zdoctor\zcore\ZCore.java|925|933|preForge|method|zdoctor.zcore.proxy.CommonProxy|preForge|()V
    Method End: preFore(Lnet/minecraftforge/fml/common/event/FMLConstructionEvent;)V
    Method Start: preInit(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
-      @|zdoctor\zcore\ZCore.java|970|977|preInit|method|zdoctor.zcore.ZCore|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
-      @|zdoctor\zcore\ZCore.java|978|1003|FMLPreInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPreInitializationEvent
-      @|zdoctor\zcore\ZCore.java|1004|1005|e|param|zdoctor.zcore.ZCore|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
-      @|zdoctor\zcore\ZCore.java|1019|1024|proxy|field|zdoctor.zcore.ZCore|proxy
-      @|zdoctor\zcore\ZCore.java|1025|1032|preInit|method|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
-      @|zdoctor\zcore\ZCore.java|1033|1034|e|param|zdoctor.zcore.ZCore|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
+      @|zdoctor\zcore\ZCore.java|948|955|preInit|method|zdoctor.zcore.ZCore|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
+      @|zdoctor\zcore\ZCore.java|956|981|FMLPreInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPreInitializationEvent
+      @|zdoctor\zcore\ZCore.java|982|983|e|param|zdoctor.zcore.ZCore|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
+      @|zdoctor\zcore\ZCore.java|997|1002|proxy|field|zdoctor.zcore.ZCore|proxy
+      @|zdoctor\zcore\ZCore.java|1003|1010|preInit|method|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
+      @|zdoctor\zcore\ZCore.java|1011|1012|e|param|zdoctor.zcore.ZCore|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
    Method End: preInit(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
    Method Start: init(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
-      @|zdoctor\zcore\ZCore.java|1069|1073|init|method|zdoctor.zcore.ZCore|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
-      @|zdoctor\zcore\ZCore.java|1074|1096|FMLInitializationEvent|class|net.minecraftforge.fml.common.event.FMLInitializationEvent
-      @|zdoctor\zcore\ZCore.java|1097|1098|e|param|zdoctor.zcore.ZCore|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
-      @|zdoctor\zcore\ZCore.java|1112|1117|proxy|field|zdoctor.zcore.ZCore|proxy
-      @|zdoctor\zcore\ZCore.java|1118|1122|init|method|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
-      @|zdoctor\zcore\ZCore.java|1123|1124|e|param|zdoctor.zcore.ZCore|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
+      @|zdoctor\zcore\ZCore.java|1047|1051|init|method|zdoctor.zcore.ZCore|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
+      @|zdoctor\zcore\ZCore.java|1052|1074|FMLInitializationEvent|class|net.minecraftforge.fml.common.event.FMLInitializationEvent
+      @|zdoctor\zcore\ZCore.java|1075|1076|e|param|zdoctor.zcore.ZCore|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
+      @|zdoctor\zcore\ZCore.java|1090|1095|proxy|field|zdoctor.zcore.ZCore|proxy
+      @|zdoctor\zcore\ZCore.java|1096|1100|init|method|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
+      @|zdoctor\zcore\ZCore.java|1101|1102|e|param|zdoctor.zcore.ZCore|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
    Method End: init(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
    Method Start: postInit(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
-      @|zdoctor\zcore\ZCore.java|1159|1167|postInit|method|zdoctor.zcore.ZCore|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
-      @|zdoctor\zcore\ZCore.java|1168|1194|FMLPostInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPostInitializationEvent
-      @|zdoctor\zcore\ZCore.java|1195|1196|e|param|zdoctor.zcore.ZCore|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
-      @|zdoctor\zcore\ZCore.java|1210|1215|proxy|field|zdoctor.zcore.ZCore|proxy
-      @|zdoctor\zcore\ZCore.java|1216|1224|postInit|method|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
-      @|zdoctor\zcore\ZCore.java|1225|1226|e|param|zdoctor.zcore.ZCore|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
+      @|zdoctor\zcore\ZCore.java|1137|1145|postInit|method|zdoctor.zcore.ZCore|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
+      @|zdoctor\zcore\ZCore.java|1146|1172|FMLPostInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPostInitializationEvent
+      @|zdoctor\zcore\ZCore.java|1173|1174|e|param|zdoctor.zcore.ZCore|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
+      @|zdoctor\zcore\ZCore.java|1188|1193|proxy|field|zdoctor.zcore.ZCore|proxy
+      @|zdoctor\zcore\ZCore.java|1194|1202|postInit|method|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
+      @|zdoctor\zcore\ZCore.java|1203|1204|e|param|zdoctor.zcore.ZCore|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
    Method End: postInit(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
 Class End  : zdoctor.zcore.ZCore
 endProcessing zdoctor\zcore\ZCore.java
@@ -1537,30 +1535,26 @@ endProcessing zdoctor\zcore\example\ExampleItems.java
 processing zdoctor\zcore\proxy\ClientProxy.java
 @|zdoctor\zcore\proxy\ClientProxy.java|8|27|zdoctor.zcore.proxy|package|zdoctor.zcore.proxy|(file)
 Class Start: zdoctor.zcore.proxy.ClientProxy
-   Method Start: preForge()V
-      @|zdoctor\zcore\proxy\ClientProxy.java|310|318|preForge|method|zdoctor.zcore.proxy.CommonProxy|preForge|()V
-      @|zdoctor\zcore\proxy\ClientProxy.java|331|339|preForge|method|zdoctor.zcore.proxy.CommonProxy|preForge|()V
-   Method End: preForge()V
    Method Start: preInit(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ClientProxy.java|375|382|preInit|method|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ClientProxy.java|383|408|FMLPreInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPreInitializationEvent
-      @|zdoctor\zcore\proxy\ClientProxy.java|409|410|e|param|zdoctor.zcore.proxy.ClientProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
-      @|zdoctor\zcore\proxy\ClientProxy.java|428|435|preInit|method|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ClientProxy.java|436|437|e|param|zdoctor.zcore.proxy.ClientProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\ClientProxy.java|313|320|preInit|method|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
+      @|zdoctor\zcore\proxy\ClientProxy.java|321|346|FMLPreInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPreInitializationEvent
+      @|zdoctor\zcore\proxy\ClientProxy.java|347|348|e|param|zdoctor.zcore.proxy.ClientProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\ClientProxy.java|366|373|preInit|method|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
+      @|zdoctor\zcore\proxy\ClientProxy.java|374|375|e|param|zdoctor.zcore.proxy.ClientProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
    Method End: preInit(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
    Method Start: init(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ClientProxy.java|477|481|init|method|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ClientProxy.java|482|504|FMLInitializationEvent|class|net.minecraftforge.fml.common.event.FMLInitializationEvent
-      @|zdoctor\zcore\proxy\ClientProxy.java|505|506|e|param|zdoctor.zcore.proxy.ClientProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
-      @|zdoctor\zcore\proxy\ClientProxy.java|524|528|init|method|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ClientProxy.java|529|530|e|param|zdoctor.zcore.proxy.ClientProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\ClientProxy.java|415|419|init|method|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
+      @|zdoctor\zcore\proxy\ClientProxy.java|420|442|FMLInitializationEvent|class|net.minecraftforge.fml.common.event.FMLInitializationEvent
+      @|zdoctor\zcore\proxy\ClientProxy.java|443|444|e|param|zdoctor.zcore.proxy.ClientProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\ClientProxy.java|462|466|init|method|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
+      @|zdoctor\zcore\proxy\ClientProxy.java|467|468|e|param|zdoctor.zcore.proxy.ClientProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
    Method End: init(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
    Method Start: postInit(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ClientProxy.java|570|578|postInit|method|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ClientProxy.java|579|605|FMLPostInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPostInitializationEvent
-      @|zdoctor\zcore\proxy\ClientProxy.java|606|607|e|param|zdoctor.zcore.proxy.ClientProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
-      @|zdoctor\zcore\proxy\ClientProxy.java|625|633|postInit|method|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ClientProxy.java|634|635|e|param|zdoctor.zcore.proxy.ClientProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\ClientProxy.java|508|516|postInit|method|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
+      @|zdoctor\zcore\proxy\ClientProxy.java|517|543|FMLPostInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPostInitializationEvent
+      @|zdoctor\zcore\proxy\ClientProxy.java|544|545|e|param|zdoctor.zcore.proxy.ClientProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\ClientProxy.java|563|571|postInit|method|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
+      @|zdoctor\zcore\proxy\ClientProxy.java|572|573|e|param|zdoctor.zcore.proxy.ClientProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
    Method End: postInit(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
 Class End  : zdoctor.zcore.proxy.ClientProxy
 endProcessing zdoctor\zcore\proxy\ClientProxy.java
@@ -1573,78 +1567,75 @@ Class Start: zdoctor.zcore.proxy.CommonProxy
    @|zdoctor\zcore\proxy\CommonProxy.java|589|593|subs|field|zdoctor.zcore.proxy.CommonProxy|subs|
    @|zdoctor\zcore\proxy\CommonProxy.java|600|609|ArrayList|class|java.util.ArrayList
    @|zdoctor\zcore\proxy\CommonProxy.java|610|619|ISubEvent|class|zdoctor.zcore.common.ISubEvent
-   Method Start: preForge()V
-      @|zdoctor\zcore\proxy\CommonProxy.java|639|647|preForge|method|zdoctor.zcore.proxy.CommonProxy|preForge|()V
-   Method End: preForge()V
    Method Start: preInit(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|775|782|preInit|method|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|783|808|FMLPreInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPreInitializationEvent
-      @|zdoctor\zcore\proxy\CommonProxy.java|809|810|e|param|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
-      @|zdoctor\zcore\proxy\CommonProxy.java|816|824|alertAll|method|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|825|826|e|param|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\CommonProxy.java|639|646|preInit|method|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
+      @|zdoctor\zcore\proxy\CommonProxy.java|647|672|FMLPreInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPreInitializationEvent
+      @|zdoctor\zcore\proxy\CommonProxy.java|673|674|e|param|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\CommonProxy.java|680|688|alertAll|method|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
+      @|zdoctor\zcore\proxy\CommonProxy.java|689|690|e|param|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
    Method End: preInit(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
    Method Start: init(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|847|851|init|method|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|852|874|FMLInitializationEvent|class|net.minecraftforge.fml.common.event.FMLInitializationEvent
-      @|zdoctor\zcore\proxy\CommonProxy.java|875|876|e|param|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
-      @|zdoctor\zcore\proxy\CommonProxy.java|882|890|alertAll|method|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|891|892|e|param|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\CommonProxy.java|711|715|init|method|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
+      @|zdoctor\zcore\proxy\CommonProxy.java|716|738|FMLInitializationEvent|class|net.minecraftforge.fml.common.event.FMLInitializationEvent
+      @|zdoctor\zcore\proxy\CommonProxy.java|739|740|e|param|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\CommonProxy.java|746|754|alertAll|method|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
+      @|zdoctor\zcore\proxy\CommonProxy.java|755|756|e|param|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
    Method End: init(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
    Method Start: postInit(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|913|921|postInit|method|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|922|948|FMLPostInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPostInitializationEvent
-      @|zdoctor\zcore\proxy\CommonProxy.java|949|950|e|param|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
-      @|zdoctor\zcore\proxy\CommonProxy.java|956|964|alertAll|method|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|965|966|e|param|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
-      @|zdoctor\zcore\proxy\CommonProxy.java|971|975|subs|field|zdoctor.zcore.proxy.CommonProxy|subs
-      @|zdoctor\zcore\proxy\CommonProxy.java|976|981|clear|method|java.util.Collection|clear|()V
+      @|zdoctor\zcore\proxy\CommonProxy.java|777|785|postInit|method|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
+      @|zdoctor\zcore\proxy\CommonProxy.java|786|812|FMLPostInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPostInitializationEvent
+      @|zdoctor\zcore\proxy\CommonProxy.java|813|814|e|param|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\CommonProxy.java|820|828|alertAll|method|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
+      @|zdoctor\zcore\proxy\CommonProxy.java|829|830|e|param|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\CommonProxy.java|835|839|subs|field|zdoctor.zcore.proxy.CommonProxy|subs
+      @|zdoctor\zcore\proxy\CommonProxy.java|840|845|clear|method|java.util.Collection|clear|()V
    Method End: postInit(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
    Method Start: subEvent(Lzdoctor/zcore/common/ISubEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|1010|1018|subEvent|method|zdoctor.zcore.proxy.CommonProxy|subEvent|(Lzdoctor/zcore/common/ISubEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|1019|1028|ISubEvent|class|zdoctor.zcore.common.ISubEvent
-      @|zdoctor\zcore\proxy\CommonProxy.java|1029|1035|object|param|zdoctor.zcore.proxy.CommonProxy|subEvent|(Lzdoctor/zcore/common/ISubEvent;)V|object|0
-      @|zdoctor\zcore\proxy\CommonProxy.java|1042|1046|subs|field|zdoctor.zcore.proxy.CommonProxy|subs
-      @|zdoctor\zcore\proxy\CommonProxy.java|1047|1050|add|method|java.util.Collection|add|(Lzdoctor/zcore/common/ISubEvent;)Z
-      @|zdoctor\zcore\proxy\CommonProxy.java|1051|1057|object|param|zdoctor.zcore.proxy.CommonProxy|subEvent|(Lzdoctor/zcore/common/ISubEvent;)V|object|0
+      @|zdoctor\zcore\proxy\CommonProxy.java|874|882|subEvent|method|zdoctor.zcore.proxy.CommonProxy|subEvent|(Lzdoctor/zcore/common/ISubEvent;)V
+      @|zdoctor\zcore\proxy\CommonProxy.java|883|892|ISubEvent|class|zdoctor.zcore.common.ISubEvent
+      @|zdoctor\zcore\proxy\CommonProxy.java|893|899|object|param|zdoctor.zcore.proxy.CommonProxy|subEvent|(Lzdoctor/zcore/common/ISubEvent;)V|object|0
+      @|zdoctor\zcore\proxy\CommonProxy.java|906|910|subs|field|zdoctor.zcore.proxy.CommonProxy|subs
+      @|zdoctor\zcore\proxy\CommonProxy.java|911|914|add|method|java.util.Collection|add|(Lzdoctor/zcore/common/ISubEvent;)Z
+      @|zdoctor\zcore\proxy\CommonProxy.java|915|921|object|param|zdoctor.zcore.proxy.CommonProxy|subEvent|(Lzdoctor/zcore/common/ISubEvent;)V|object|0
    Method End: subEvent(Lzdoctor/zcore/common/ISubEvent;)V
    Method Start: alertAll(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|1087|1095|alertAll|method|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|1096|1121|FMLPreInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPreInitializationEvent
-      @|zdoctor\zcore\proxy\CommonProxy.java|1122|1123|e|param|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
-      @|zdoctor\zcore\proxy\CommonProxy.java|1128|1136|Iterator|class|java.util.Iterator
-      @|zdoctor\zcore\proxy\CommonProxy.java|1137|1146|ISubEvent|class|zdoctor.zcore.common.ISubEvent
-      @|zdoctor\zcore\proxy\CommonProxy.java|1163|1167|subs|field|zdoctor.zcore.proxy.CommonProxy|subs
-      @|zdoctor\zcore\proxy\CommonProxy.java|1168|1176|iterator|method|java.lang.Iterable|iterator|()Ljava/util/Iterator;
-      @|zdoctor\zcore\proxy\CommonProxy.java|1201|1208|hasNext|method|java.util.Iterator|hasNext|()Z
-      @|zdoctor\zcore\proxy\CommonProxy.java|1229|1233|next|method|java.util.Iterator|next|()Lzdoctor/zcore/common/ISubEvent;
-      @|zdoctor\zcore\proxy\CommonProxy.java|1236|1240|fire|method|zdoctor.zcore.common.ISubEvent|fire|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|1241|1242|e|param|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\CommonProxy.java|951|959|alertAll|method|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
+      @|zdoctor\zcore\proxy\CommonProxy.java|960|985|FMLPreInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPreInitializationEvent
+      @|zdoctor\zcore\proxy\CommonProxy.java|986|987|e|param|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\CommonProxy.java|992|1000|Iterator|class|java.util.Iterator
+      @|zdoctor\zcore\proxy\CommonProxy.java|1001|1010|ISubEvent|class|zdoctor.zcore.common.ISubEvent
+      @|zdoctor\zcore\proxy\CommonProxy.java|1027|1031|subs|field|zdoctor.zcore.proxy.CommonProxy|subs
+      @|zdoctor\zcore\proxy\CommonProxy.java|1032|1040|iterator|method|java.lang.Iterable|iterator|()Ljava/util/Iterator;
+      @|zdoctor\zcore\proxy\CommonProxy.java|1065|1072|hasNext|method|java.util.Iterator|hasNext|()Z
+      @|zdoctor\zcore\proxy\CommonProxy.java|1093|1097|next|method|java.util.Iterator|next|()Lzdoctor/zcore/common/ISubEvent;
+      @|zdoctor\zcore\proxy\CommonProxy.java|1100|1104|fire|method|zdoctor.zcore.common.ISubEvent|fire|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
+      @|zdoctor\zcore\proxy\CommonProxy.java|1105|1106|e|param|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
    Method End: alertAll(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
    Method Start: alertAll(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|1272|1280|alertAll|method|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|1281|1303|FMLInitializationEvent|class|net.minecraftforge.fml.common.event.FMLInitializationEvent
-      @|zdoctor\zcore\proxy\CommonProxy.java|1304|1305|e|param|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
-      @|zdoctor\zcore\proxy\CommonProxy.java|1310|1318|Iterator|class|java.util.Iterator
-      @|zdoctor\zcore\proxy\CommonProxy.java|1319|1328|ISubEvent|class|zdoctor.zcore.common.ISubEvent
-      @|zdoctor\zcore\proxy\CommonProxy.java|1345|1349|subs|field|zdoctor.zcore.proxy.CommonProxy|subs
-      @|zdoctor\zcore\proxy\CommonProxy.java|1350|1358|iterator|method|java.lang.Iterable|iterator|()Ljava/util/Iterator;
-      @|zdoctor\zcore\proxy\CommonProxy.java|1383|1390|hasNext|method|java.util.Iterator|hasNext|()Z
-      @|zdoctor\zcore\proxy\CommonProxy.java|1411|1415|next|method|java.util.Iterator|next|()Lzdoctor/zcore/common/ISubEvent;
-      @|zdoctor\zcore\proxy\CommonProxy.java|1418|1422|fire|method|zdoctor.zcore.common.ISubEvent|fire|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|1423|1424|e|param|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\CommonProxy.java|1136|1144|alertAll|method|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
+      @|zdoctor\zcore\proxy\CommonProxy.java|1145|1167|FMLInitializationEvent|class|net.minecraftforge.fml.common.event.FMLInitializationEvent
+      @|zdoctor\zcore\proxy\CommonProxy.java|1168|1169|e|param|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\CommonProxy.java|1174|1182|Iterator|class|java.util.Iterator
+      @|zdoctor\zcore\proxy\CommonProxy.java|1183|1192|ISubEvent|class|zdoctor.zcore.common.ISubEvent
+      @|zdoctor\zcore\proxy\CommonProxy.java|1209|1213|subs|field|zdoctor.zcore.proxy.CommonProxy|subs
+      @|zdoctor\zcore\proxy\CommonProxy.java|1214|1222|iterator|method|java.lang.Iterable|iterator|()Ljava/util/Iterator;
+      @|zdoctor\zcore\proxy\CommonProxy.java|1247|1254|hasNext|method|java.util.Iterator|hasNext|()Z
+      @|zdoctor\zcore\proxy\CommonProxy.java|1275|1279|next|method|java.util.Iterator|next|()Lzdoctor/zcore/common/ISubEvent;
+      @|zdoctor\zcore\proxy\CommonProxy.java|1282|1286|fire|method|zdoctor.zcore.common.ISubEvent|fire|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
+      @|zdoctor\zcore\proxy\CommonProxy.java|1287|1288|e|param|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
    Method End: alertAll(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
    Method Start: alertAll(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|1454|1462|alertAll|method|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|1463|1489|FMLPostInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPostInitializationEvent
-      @|zdoctor\zcore\proxy\CommonProxy.java|1490|1491|e|param|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
-      @|zdoctor\zcore\proxy\CommonProxy.java|1496|1504|Iterator|class|java.util.Iterator
-      @|zdoctor\zcore\proxy\CommonProxy.java|1505|1514|ISubEvent|class|zdoctor.zcore.common.ISubEvent
-      @|zdoctor\zcore\proxy\CommonProxy.java|1531|1535|subs|field|zdoctor.zcore.proxy.CommonProxy|subs
-      @|zdoctor\zcore\proxy\CommonProxy.java|1536|1544|iterator|method|java.lang.Iterable|iterator|()Ljava/util/Iterator;
-      @|zdoctor\zcore\proxy\CommonProxy.java|1569|1576|hasNext|method|java.util.Iterator|hasNext|()Z
-      @|zdoctor\zcore\proxy\CommonProxy.java|1597|1601|next|method|java.util.Iterator|next|()Lzdoctor/zcore/common/ISubEvent;
-      @|zdoctor\zcore\proxy\CommonProxy.java|1604|1608|fire|method|zdoctor.zcore.common.ISubEvent|fire|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
-      @|zdoctor\zcore\proxy\CommonProxy.java|1609|1610|e|param|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\CommonProxy.java|1318|1326|alertAll|method|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
+      @|zdoctor\zcore\proxy\CommonProxy.java|1327|1353|FMLPostInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPostInitializationEvent
+      @|zdoctor\zcore\proxy\CommonProxy.java|1354|1355|e|param|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\CommonProxy.java|1360|1368|Iterator|class|java.util.Iterator
+      @|zdoctor\zcore\proxy\CommonProxy.java|1369|1378|ISubEvent|class|zdoctor.zcore.common.ISubEvent
+      @|zdoctor\zcore\proxy\CommonProxy.java|1395|1399|subs|field|zdoctor.zcore.proxy.CommonProxy|subs
+      @|zdoctor\zcore\proxy\CommonProxy.java|1400|1408|iterator|method|java.lang.Iterable|iterator|()Ljava/util/Iterator;
+      @|zdoctor\zcore\proxy\CommonProxy.java|1433|1440|hasNext|method|java.util.Iterator|hasNext|()Z
+      @|zdoctor\zcore\proxy\CommonProxy.java|1461|1465|next|method|java.util.Iterator|next|()Lzdoctor/zcore/common/ISubEvent;
+      @|zdoctor\zcore\proxy\CommonProxy.java|1468|1472|fire|method|zdoctor.zcore.common.ISubEvent|fire|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
+      @|zdoctor\zcore\proxy\CommonProxy.java|1473|1474|e|param|zdoctor.zcore.proxy.CommonProxy|alertAll|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
    Method End: alertAll(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
 Class End  : zdoctor.zcore.proxy.CommonProxy
 endProcessing zdoctor\zcore\proxy\CommonProxy.java
@@ -1652,30 +1643,26 @@ endProcessing zdoctor\zcore\proxy\CommonProxy.java
 processing zdoctor\zcore\proxy\ServerProxy.java
 @|zdoctor\zcore\proxy\ServerProxy.java|8|27|zdoctor.zcore.proxy|package|zdoctor.zcore.proxy|(file)
 Class Start: zdoctor.zcore.proxy.ServerProxy
-   Method Start: preForge()V
-      @|zdoctor\zcore\proxy\ServerProxy.java|310|318|preForge|method|zdoctor.zcore.proxy.CommonProxy|preForge|()V
-      @|zdoctor\zcore\proxy\ServerProxy.java|331|339|preForge|method|zdoctor.zcore.proxy.CommonProxy|preForge|()V
-   Method End: preForge()V
    Method Start: preInit(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ServerProxy.java|373|380|preInit|method|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ServerProxy.java|381|406|FMLPreInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPreInitializationEvent
-      @|zdoctor\zcore\proxy\ServerProxy.java|407|408|e|param|zdoctor.zcore.proxy.ServerProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
-      @|zdoctor\zcore\proxy\ServerProxy.java|426|433|preInit|method|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ServerProxy.java|434|435|e|param|zdoctor.zcore.proxy.ServerProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\ServerProxy.java|313|320|preInit|method|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
+      @|zdoctor\zcore\proxy\ServerProxy.java|321|346|FMLPreInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPreInitializationEvent
+      @|zdoctor\zcore\proxy\ServerProxy.java|347|348|e|param|zdoctor.zcore.proxy.ServerProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\ServerProxy.java|366|373|preInit|method|zdoctor.zcore.proxy.CommonProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
+      @|zdoctor\zcore\proxy\ServerProxy.java|374|375|e|param|zdoctor.zcore.proxy.ServerProxy|preInit|(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V|e|0
    Method End: preInit(Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V
    Method Start: init(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ServerProxy.java|475|479|init|method|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ServerProxy.java|480|502|FMLInitializationEvent|class|net.minecraftforge.fml.common.event.FMLInitializationEvent
-      @|zdoctor\zcore\proxy\ServerProxy.java|503|504|e|param|zdoctor.zcore.proxy.ServerProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
-      @|zdoctor\zcore\proxy\ServerProxy.java|522|526|init|method|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ServerProxy.java|527|528|e|param|zdoctor.zcore.proxy.ServerProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\ServerProxy.java|415|419|init|method|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
+      @|zdoctor\zcore\proxy\ServerProxy.java|420|442|FMLInitializationEvent|class|net.minecraftforge.fml.common.event.FMLInitializationEvent
+      @|zdoctor\zcore\proxy\ServerProxy.java|443|444|e|param|zdoctor.zcore.proxy.ServerProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\ServerProxy.java|462|466|init|method|zdoctor.zcore.proxy.CommonProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
+      @|zdoctor\zcore\proxy\ServerProxy.java|467|468|e|param|zdoctor.zcore.proxy.ServerProxy|init|(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V|e|0
    Method End: init(Lnet/minecraftforge/fml/common/event/FMLInitializationEvent;)V
    Method Start: postInit(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ServerProxy.java|568|576|postInit|method|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ServerProxy.java|577|603|FMLPostInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPostInitializationEvent
-      @|zdoctor\zcore\proxy\ServerProxy.java|604|605|e|param|zdoctor.zcore.proxy.ServerProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
-      @|zdoctor\zcore\proxy\ServerProxy.java|623|631|postInit|method|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
-      @|zdoctor\zcore\proxy\ServerProxy.java|632|633|e|param|zdoctor.zcore.proxy.ServerProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\ServerProxy.java|508|516|postInit|method|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
+      @|zdoctor\zcore\proxy\ServerProxy.java|517|543|FMLPostInitializationEvent|class|net.minecraftforge.fml.common.event.FMLPostInitializationEvent
+      @|zdoctor\zcore\proxy\ServerProxy.java|544|545|e|param|zdoctor.zcore.proxy.ServerProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
+      @|zdoctor\zcore\proxy\ServerProxy.java|563|571|postInit|method|zdoctor.zcore.proxy.CommonProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
+      @|zdoctor\zcore\proxy\ServerProxy.java|572|573|e|param|zdoctor.zcore.proxy.ServerProxy|postInit|(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V|e|0
    Method End: postInit(Lnet/minecraftforge/fml/common/event/FMLPostInitializationEvent;)V
 Class End  : zdoctor.zcore.proxy.ServerProxy
 endProcessing zdoctor\zcore\proxy\ServerProxy.java

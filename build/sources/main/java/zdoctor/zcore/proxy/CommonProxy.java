@@ -16,13 +16,6 @@ import zdoctor.zcore.example.ExampleItems;
 public class CommonProxy {
 	protected static List<ISubEvent> subs = new ArrayList<ISubEvent>();
 	
-	public void preForge() {
-		//ExampleItems.load();
-		//ExampleBlocks.load();
-    	//ExampleFood.load();
-    	//ExampleCrop.load();
-	}
-	
 	public void preInit(FMLPreInitializationEvent e) {
 		alertAll(e);
 	}

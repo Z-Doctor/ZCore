@@ -32991,7 +32991,6 @@ Start Processing: zdoctor\zcore\ZCore.java
 Warning: zdoctor\zcore\ZCore.java has CRLF line endings; consider switching to LF
 [method, zdoctor/zcore/ZCore/preFore, (Lnet/minecraftforge/fml/common/event/FMLConstructionEvent;)V]
 No rename for class net/minecraftforge/fml/common/event/FMLConstructionEvent
-[method, zdoctor/zcore/proxy/CommonProxy/preForge, ()V]
 [method, zdoctor/zcore/ZCore/preInit, (Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V]
 No rename for class net/minecraftforge/fml/common/event/FMLPreInitializationEvent
 [method, zdoctor/zcore/proxy/CommonProxy/preInit, (Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V]
@@ -33776,8 +33775,6 @@ End  Processing: zdoctor\zcore\example\ExampleItems.java
 
 Start Processing: zdoctor\zcore\proxy\ClientProxy.java
 Warning: zdoctor\zcore\proxy\ClientProxy.java has CRLF line endings; consider switching to LF
-[method, zdoctor/zcore/proxy/CommonProxy/preForge, ()V]
-[method, zdoctor/zcore/proxy/CommonProxy/preForge, ()V]
 [method, zdoctor/zcore/proxy/CommonProxy/preInit, (Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V]
 No rename for class net/minecraftforge/fml/common/event/FMLPreInitializationEvent
 [method, zdoctor/zcore/proxy/CommonProxy/preInit, (Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V]
@@ -33792,7 +33789,6 @@ End  Processing: zdoctor\zcore\proxy\ClientProxy.java
 
 Start Processing: zdoctor\zcore\proxy\CommonProxy.java
 Warning: zdoctor\zcore\proxy\CommonProxy.java has CRLF line endings; consider switching to LF
-[method, zdoctor/zcore/proxy/CommonProxy/preForge, ()V]
 [method, zdoctor/zcore/proxy/CommonProxy/preInit, (Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V]
 No rename for class net/minecraftforge/fml/common/event/FMLPreInitializationEvent
 [method, zdoctor/zcore/proxy/CommonProxy/alertAll, (Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V]
@@ -33828,8 +33824,6 @@ End  Processing: zdoctor\zcore\proxy\CommonProxy.java
 
 Start Processing: zdoctor\zcore\proxy\ServerProxy.java
 Warning: zdoctor\zcore\proxy\ServerProxy.java has CRLF line endings; consider switching to LF
-[method, zdoctor/zcore/proxy/CommonProxy/preForge, ()V]
-[method, zdoctor/zcore/proxy/CommonProxy/preForge, ()V]
 [method, zdoctor/zcore/proxy/CommonProxy/preInit, (Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V]
 No rename for class net/minecraftforge/fml/common/event/FMLPreInitializationEvent
 [method, zdoctor/zcore/proxy/CommonProxy/preInit, (Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V]

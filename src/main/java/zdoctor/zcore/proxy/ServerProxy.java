@@ -6,10 +6,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class ServerProxy extends CommonProxy {
 	@Override
-	public void preForge() {
-		super.preForge();
-	}
-	@Override
     public void preInit(FMLPreInitializationEvent e) {
         super.preInit(e);
     }

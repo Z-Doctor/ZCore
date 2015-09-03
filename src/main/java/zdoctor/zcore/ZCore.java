@@ -20,7 +20,7 @@ public class ZCore {
 	
 	@EventHandler
 	public void preFore(FMLConstructionEvent e){
-		this.proxy.preForge();
+		
 	}
 	
 	@EventHandler
