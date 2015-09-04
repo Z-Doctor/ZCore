@@ -1,6 +1,7 @@
 Planned: No necessarily in this order.
     Near future:
-    - Language Support
+    - Create wiki
+    - JSon Creator
     - Block/Item Meta
     - Easy Entities
     - Easy Weapons

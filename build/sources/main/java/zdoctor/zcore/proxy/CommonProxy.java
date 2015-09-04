@@ -8,10 +8,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import zdoctor.zcore.common.ISubEvent;
-import zdoctor.zcore.example.ExampleBlocks;
-import zdoctor.zcore.example.ExampleCrop;
-import zdoctor.zcore.example.ExampleFood;
-import zdoctor.zcore.example.ExampleItems;
 
 public class CommonProxy {
 	protected static List<ISubEvent> subs = new ArrayList<ISubEvent>();

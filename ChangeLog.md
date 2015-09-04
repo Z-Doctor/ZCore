@@ -1,3 +1,8 @@
+0.0.8
+    - Removed DEV
+    - Cleaned/Fixed code
+    - Everything seems stable
+
 0.0.7-DEV
     - Updated Common proxy (each class now handles each event on its own)
     - Cleaned up/updated all class code

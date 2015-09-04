@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "zcore:crops/EmeraldCrop/EmeraldCrop_stage_1"
+    }
+}

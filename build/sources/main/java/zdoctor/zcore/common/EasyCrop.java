@@ -13,17 +13,16 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameData;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -36,16 +35,16 @@ public class EasyCrop extends BlockBush implements IGrowable, ISubEvent {
     protected Item crop;
     
     // Basic info
- 	protected final String blockModel;
+ 	protected final String cropModel;
  	protected final String modID;
  	// Constructors
  	public EasyCrop(String model, String mod) {
  		this(model, mod, (CreativeTabs)null);
  	}
  	public EasyCrop(String model, String mod, CreativeTabs tab) {
- 		this.blockModel = model;
+ 		this.cropModel = model;
  		this.modID = mod;
- 		
+ 		 		
  		this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)));
 		this.setTickRandomly(true);
 		float f = 0.5F;
@@ -54,13 +53,14 @@ public class EasyCrop extends BlockBush implements IGrowable, ISubEvent {
 		this.setStepSound(soundTypeGrass);
 		this.disableStats();
  		this.setCreativeTab(tab);
+ 		
  		this.setUnlocalizedName(this.getModelPath());
  		
  		CommonProxy.subEvent(this);
  	}
  	
  	public EasyCrop setCrop(Item crop) {
- 		return this.setCrop(crop, null);
+ 		return this.setCrop(crop, (Item)null);
  	}
  	public EasyCrop setCrop(Item crop, Item seed) {
  		this.crop = crop;
@@ -70,7 +70,7 @@ public class EasyCrop extends BlockBush implements IGrowable, ISubEvent {
  	
  	/** Override to set a different path */
  	public String getModelPath() {
- 		return "crop/" + this.blockModel;
+ 		return "crop/" + this.cropModel;
  	}
  	/** Override to change meta */
  	public int getBlockMeta() {
@@ -83,17 +83,11 @@ public class EasyCrop extends BlockBush implements IGrowable, ISubEvent {
  	/** Override this and register you crops model files to change */
  	protected void registerRender() {
  		for(int i=0;i<=7;i++){
- 			System.out.println(this.getModelPath() + "_stage" + i);
  			this.registerRender(this.getModelPath() + "_stage" + i);
- 			registerVariants(this.getModelPath() + "_stage" + i);
  		}
  	}
- 	
- 	protected void registerVariants(String variant) {
- 		ModelBakery.addVariantName(Item.getItemFromBlock(this), variant);
- 	}
- 	
  	protected void registerRender(String crop) {
+ 		System.out.println("Rendering: " + this.modID + ":" + crop);
  		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this.asItem(), this.getBlockMeta(), 
  			new ModelResourceLocation(this.modID + ":" + crop));
  	}
@@ -101,9 +95,8 @@ public class EasyCrop extends BlockBush implements IGrowable, ISubEvent {
  	// Overrides
  	@Override
 	public void fire(FMLPreInitializationEvent e) {
-		System.out.println(this.modID + ":" + this.getModelPath());
- 		GameRegistry.registerBlock(this, this.getModelPath());
-		
+		System.out.println("Registering: " + this.modID + ":" + this.getModelPath());
+		GameRegistry.registerBlock(this, this.getModelPath());
 	}
 	@Override
 	public void fire(FMLInitializationEvent e) {
@@ -117,7 +110,6 @@ public class EasyCrop extends BlockBush implements IGrowable, ISubEvent {
 	
 	@Override
 	public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-		// TODO Auto-generated method stub
 		return super.canPlaceBlockAt(worldIn, pos) && worldIn.getBlockState(pos.down()).getBlock().canSustainPlant(worldIn, pos.down(), net.minecraft.util.EnumFacing.UP, this)
 			&& canPlaceBlockOn(worldIn.getBlockState(pos.down()).getBlock());
 	}

@@ -64,22 +64,23 @@ public class EasyItem extends Item implements ISubEvent {
 		return this;
 	}
 	
-	public void registerItem() {
-		GameRegistry.registerItem(this, this.getModelPath(), this.modID);
+	protected void registerRender() {
+		System.out.println(this.modID + ":" + this.getModelPath());
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, this.getItemMeta(), 
+				new ModelResourceLocation(this.modID + ":" + this.getModelPath(), "inventory"));
 	}
 	
 	// Overrides
 	@Override
 	public void fire(FMLPreInitializationEvent e) {
-		System.out.println(this.modID + ":" + this.getModelPath());
+		System.out.println("Registering: " + this.modID + ":" + this.getModelPath());
 		GameRegistry.registerItem(this, this.getModelPath(), this.modID);
 		
 	}
 	@Override
 	public void fire(FMLInitializationEvent e) {
 		if(e.getSide() == Side.CLIENT)
-			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, this.getItemMeta(), 
-				new ModelResourceLocation(this.modID + ":" + this.getModelPath(), "inventory"));
+			registerRender();
 		if(this.recipe != null) {
 			if(this.isShapeless)
 				GameRegistry.addShapelessRecipe(new ItemStack(this), this.recipe);

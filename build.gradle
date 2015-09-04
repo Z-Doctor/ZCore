@@ -20,7 +20,7 @@ plugins {
     id "net.minecraftforge.gradle.forge" version "2.0.1"
 }
 
-version = "0.0.7"
+version = "0.0.8"
 group= "zdoctor.zcore" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "zcore"
 
