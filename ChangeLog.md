@@ -1,3 +1,10 @@
+0.0.9
+    - Fixed bugs with easy crops and seeds
+    - Updated mcmod info and gradle
+    - Created some Helper Functions
+        - getBlock returns the block at a pos in specified world
+        - checkSurrondingsFor checks all 8 spaces around he block for a specific block
+
 0.0.8
     - Removed DEV
     - Cleaned/Fixed code

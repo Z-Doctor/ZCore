@@ -12,7 +12,7 @@ import zdoctor.zcore.proxy.CommonProxy;
 @Mod(modid = ZCore.modid, version = ZCore.verid, name = ZCore.name)
 public class ZCore {
 	public static final  String modid = "zcore";
-	public static final String verid = "0.0.8";
+	public static final String verid = "0.0.9";
 	public static final String name = "ZCore";
 	
 	@SidedProxy(clientSide="zdoctor.zcore.proxy.ClientProxy", serverSide="zdoctor.zcore.proxy.ServerProxy")

@@ -2,8 +2,8 @@
 {
   "modid": "zcore",
   "name": "ZCore",
-  "description": "Core Mod of all my works.",
-  "version": "0.0.7",
+  "description": "Despite being a core mod, if built correctly you do not need this file in your mod folder.",
+  "version": "0.0.9",
   "mcversion": "1.8",
   "url": "",
   "updateUrl": "",

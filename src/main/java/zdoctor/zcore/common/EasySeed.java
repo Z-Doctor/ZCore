@@ -16,7 +16,7 @@ import net.minecraftforge.common.IPlantable;
 public class EasySeed extends EasyItem implements IPlantable {
 	private Block crops = Blocks.wheat;
 	/** BlockID of the block the seeds can be planted on. */
-	private Block soilBlockID = Blocks.farmland;
+	private Block soilBlockID;
 	    
 	public EasySeed(String model, String mod) {
 		this(model, mod, CreativeTabs.tabMaterials);
@@ -24,27 +24,32 @@ public class EasySeed extends EasyItem implements IPlantable {
 	public EasySeed(String model, String mod, CreativeTabs tab) {
 		super(model, mod, tab);
 	}
-	
+	/*
 	public EasySeed setPlantSpec(Block crop) {
 		this.crops = crop;
 		return this;
 	}
 	public EasySeed setPlantSpec(Block crop, Block soil) {
 		this.crops = crop;
-		this.soilBlockID = soil;
+		this.setSoil(soil);
 		return this;
-	}
+	}*/
 	
-	public EasySeed setCrop(Block crop){
+	protected EasySeed setCrop(Block crop){
 		return this.setCrop(crop, null);
 	}
-	public EasySeed setCrop(Block crop, Block soil){
+	protected EasySeed setCrop(Block crop, Block soil){
 		this.crops = crop;
 		this.soilBlockID = soil == null ? Blocks.farmland : soil;
 		return this;
 	}
 	
 	public EasySeed getSeed() {
+		return this;
+	}
+	
+	private EasySeed setSoil(Block soil) {
+		this.soilBlockID = soil;
 		return this;
 	}
 	
@@ -58,7 +63,7 @@ public class EasySeed extends EasyItem implements IPlantable {
         {
             return false;
         }
-        else if (worldIn.getBlockState(pos).getBlock().canSustainPlant(worldIn, pos, EnumFacing.UP, this) && worldIn.isAirBlock(pos.up()))
+        else if (worldIn.getBlockState(pos).getBlock() == this.soilBlockID && worldIn.isAirBlock(pos.up()))
         {
             worldIn.setBlockState(pos.up(), this.crops.getDefaultState());
             --stack.stackSize;

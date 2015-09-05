@@ -10,7 +10,6 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
@@ -22,7 +21,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameData;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -33,6 +31,8 @@ public class EasyCrop extends BlockBush implements IGrowable, ISubEvent {
     
     protected Item cropSeed;
     protected Item crop;
+    
+    private Block farmLand = Blocks.farmland;
     
     // Basic info
  	protected final String cropModel;
@@ -65,6 +65,11 @@ public class EasyCrop extends BlockBush implements IGrowable, ISubEvent {
  	public EasyCrop setCrop(Item crop, Item seed) {
  		this.crop = crop;
  		this.cropSeed = seed;
+ 		return this;
+ 	}
+ 	
+ 	public EasyCrop growsOn(Block ground) {
+ 		this.farmLand = ground;
  		return this;
  	}
  	
@@ -105,22 +110,21 @@ public class EasyCrop extends BlockBush implements IGrowable, ISubEvent {
 	}
 	@Override
 	public void fire(FMLPostInitializationEvent e) {
-		((EasySeed) this.cropSeed).setCrop(this);
+		((EasySeed) this.cropSeed).setCrop(this, this.farmLand);
 	}
 	
 	@Override
 	public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-		return super.canPlaceBlockAt(worldIn, pos) && worldIn.getBlockState(pos.down()).getBlock().canSustainPlant(worldIn, pos.down(), net.minecraft.util.EnumFacing.UP, this)
-			&& canPlaceBlockOn(worldIn.getBlockState(pos.down()).getBlock());
+		return canPlaceBlockOn(worldIn.getBlockState(pos).getBlock());
 	}
 	
     /**
      * is the block grass, dirt or farmland
-     * override to change
+     * override to customize
      */
     protected boolean canPlaceBlockOn(Block ground)
     {
-        return ground == Blocks.farmland;
+        return ground == this.farmLand;
     }
 
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
@@ -213,7 +217,7 @@ public class EasyCrop extends BlockBush implements IGrowable, ISubEvent {
     public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
     {
         return (worldIn.getLight(pos) >= 8 || worldIn.canSeeSky(pos)) && worldIn.getBlockState(pos.down()).getBlock().canSustainPlant(worldIn, pos.down(), net.minecraft.util.EnumFacing.UP, this)
-			&& canPlaceBlockOn(worldIn.getBlockState(pos.down()).getBlock());
+			&& canPlaceBlockAt(worldIn, pos.down());
     }
 
     protected Item getSeed()
