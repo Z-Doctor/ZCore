@@ -20,7 +20,7 @@ public class ZCore {
 	
 	@EventHandler
 	public void preFore(FMLConstructionEvent e){
-		System.out.println("Using version 0.8 of ZCore");
+		System.out.println("Using version 0.8 of ZCore test");
 	}
 	
 	@EventHandler

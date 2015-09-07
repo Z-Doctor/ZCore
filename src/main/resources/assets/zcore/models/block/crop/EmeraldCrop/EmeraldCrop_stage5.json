@@ -1,0 +1,6 @@
+{
+    "parent": "zcore:block/WheatCrop",
+    "textures": {
+        "crop": "zcore:crops/EmeraldCrop/EmeraldCrop_stage_5"
+    }
+}
