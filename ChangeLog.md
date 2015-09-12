@@ -1,3 +1,13 @@
+0.1.0
+    - Restructed Code Organization
+    - Added lots of doumentation
+    - Added EasyFunctions
+    - Changed how ZCore is implemeted
+    - Added an easy way to add config options, automatically saves when edited
+    - Added a place to add custom events and have them registered automatically
+    - Added a folder to register items in
+    
+    
 0.0.9
     - Fixed bugs with easy crops and seeds
     - Updated mcmod info and gradle

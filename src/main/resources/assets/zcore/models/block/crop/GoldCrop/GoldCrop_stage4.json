@@ -1,6 +1,0 @@
-{
-    "parent": "zcore:block/CrossCrop",
-    "textures": {
-        "crop": "zcore:crops/GoldCrop/GoldCrop_stage_4"
-    }
-}
